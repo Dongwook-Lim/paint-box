@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import "_variables";
+@import "_types";
+@import "_fonts";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding-top: 6.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > *:not(footer, header) {
+    padding: 0 10vw;
+    margin: 40px 0;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    li{
+        @extend %small-style;
+    }
+}
+
+a{
+    @extend %small-style;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid;
+    padding: 1.23rem 4.375rem;
+    margin-top: 50px;
+}
+
+a:hover:not(.read-story){
+    background: $grey;
+    color: $white;
+    border-color: black;
+}
+
+h5{
+    @extend %small-style;
+}
+
+h2{
+    @extend %big-style;
+}
+
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background: $white;
+    padding: 0 10vw;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.875rem 0;
+        ul{
+            display: flex;
+            align-items: center;
+            li:nth-child(2), i{
+                padding-left: 3vw;
+            }
+        }
+    }
+    h5{
+        position: absolute;
+        top: 2.688rem;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        font-size: 1.25rem;
+    }
+}
+
+.main{
+    @include type-1($lignt-beige);
+}
+
+.our-studio{
+    @include type-1($beige);
+}
+
+.gift-cards{
+    @include type-1($light-blue);
+}
+
+.our-side-the-box{
+    @include type-1($light-orange);
+}
+
+.the-shop{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        margin: 0 0 60px 0;
+    }
+    .shop-content{
+        display: flex;
+        justify-content: center;
+        width: 80vw;
+        .shop{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 25vw;
+            .content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 60px;
+                h5{
+                    margin-bottom: 0;
+                }
+                h5:nth-child(3){
+                    color: grey;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                h2{
+                    margin: 0;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+    img{
+        width: 25vw;
+        height: 60vh;
+        object-fit: cover;
+    }
+}
+
+.inspiration{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+        width: 50%;
+    }
+    h5{
+        margin-bottom: 0;
+    }
+    h2{
+        font-size: 2.4rem;
+    }
+}
+
+.blog{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 30vw);
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $beige;
+        .wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h5{
+                margin: 0;
+            }
+            h2{
+                text-align: center;
+                width: 70%;
+                margin: 20px 0;
+            }
+            .blog-button{
+                display: flex;
+                align-items: center;
+                padding-top: 10px;
+                &:hover{
+                    cursor: pointer;
+                }
+                a{
+                    border: none;
+                    padding: 0 15px 0 0;
+                    margin: 0;
+                }
+                i{
+                    color: grey;
+                }
+            }
+        }
+    }
+}
+
+.join-our-conversation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h5{
+        margin: 0;
+    }
+    h2{
+        width: 60%;
+        text-align: center;
+        font-size: 2.4rem;
+        margin: 25px 0;
+    }
+    .email-box{
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $grey;
+        margin-top: 20px;
+        input{
+            border: none;
+            width: 650px;
+            height: 90px;
+            color: $grey;
+            font-size: 40px;
+            font-family: 'Shadows Into Light', cursive;
+            padding: 20px 60px 20px 0;
+            &::placeholder{
+                color: lightgray;
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+        i{
+            padding: 15px;
+            border: 1px solid $grey;
+            color: grey;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 20vw);
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        &:hover{
+            opacity: 0.4;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+    }
+}
+
+.follow-us{
+    display: flex;
+    h2{
+        font-size: 2.4rem;
+    }
+    h2:nth-child(2){
+        color: lightgray;
+        padding-left: 15px;
+    }
+    h2:nth-child(2):hover{
+        cursor: pointer;
+    }
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background: $beige;
+    padding: 65px;
+    margin-top: 40px;
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        h5{
+            color: grey;
+            margin-top: 0;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            li{
+                padding-top: 10px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        &:nth-child(1){
+            border-right: 1px solid $grey;
+        }
+        &:nth-child(3){
+            border-left: 1px solid $grey;
+        }
+    }
+}
+
